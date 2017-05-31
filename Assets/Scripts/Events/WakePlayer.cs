@@ -10,8 +10,9 @@ public class WakePlayer : MonoBehaviour {
 	{
 	  if (Input.anyKey && canWakePlayer)
 		{
-			
-			print("waking player");
+			GameObject.FindWithTag("Player").GetComponent<Animator>().SetTrigger("Wake");
+			Destroy(this)
+;			print("waking player");
 		}
   }
 
