@@ -8,7 +8,7 @@ public class WakePlayer : MonoBehaviour {
 
 	void Update ()
 	{
-	  if (Input.anyKey && canWakePlayer)
+	  if (Input.anyKeyDown && canWakePlayer)
 		{
 			GameObject.FindWithTag("Player").GetComponent<Animator>().SetTrigger("Wake");
 			Destroy(this)
