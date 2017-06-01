@@ -15,7 +15,7 @@ public class PlayerInit : MonoBehaviour {
 	public void InitPlayer ()
 	{
 		Instantiate(playerPrefab, transform.position, transform.rotation);
-		StartCoroutine(openingEvent.InitRoutine());
+		openingEvent.Init();
 		Destroy(gameObject);
 	}
 }

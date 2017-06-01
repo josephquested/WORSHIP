@@ -6,15 +6,22 @@ public class OpeningEvent : MonoBehaviour {
 
 	Animator anim;
 
+	public AudioSource doorAudio;
+
 	void Start ()
 	{
 		anim = GetComponent<Animator>();
 	}
 
-	public IEnumerator InitRoutine ()
+	public void Init ()
 	{
-		print("starting");
-		yield return new WaitForSeconds(3f);
-		print("end");
+		StartCoroutine(InitRoutine());
+	}
+
+	IEnumerator InitRoutine ()
+	{
+		yield return new WaitForSeconds(1f);
+		anim.SetTrigger("Init");
+		doorAudio.Play();
 	}
 }
