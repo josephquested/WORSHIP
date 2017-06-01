@@ -17,9 +17,6 @@ public class PlayerController : MonoBehaviour {
 
 	public void ReceiveMovement (float horizontal, float vertical)
 	{
-		if (horizontal != 0 || vertical != 0)
-		{
-			movement.ReceiveMovement(horizontal, vertical);
-		}
+		movement.ReceiveMovement(horizontal, vertical);
 	}
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInit : MonoBehaviour {
 
 	public GameObject playerPrefab;
+	public OpeningEvent openingEvent;
 
 	public void WakePlayer ()
 	{
@@ -14,6 +15,7 @@ public class PlayerInit : MonoBehaviour {
 	public void InitPlayer ()
 	{
 		Instantiate(playerPrefab, transform.position, transform.rotation);
+		StartCoroutine(openingEvent.InitRoutine());
 		Destroy(gameObject);
 	}
 }
