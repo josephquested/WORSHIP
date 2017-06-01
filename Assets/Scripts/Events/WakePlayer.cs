@@ -10,16 +10,13 @@ public class WakePlayer : MonoBehaviour {
 	{
 	  if (Input.anyKeyDown && canWakePlayer)
 		{
-			print("wake");
-			GameObject.FindWithTag("Player").GetComponent<Animator>().SetTrigger("Wake");
+			GameObject.FindWithTag("Player").GetComponent<PlayerInit>().WakePlayer();
 			Destroy(this);
-			print("waking player");
 		}
   }
 
 	public void InitCanWakePlayer ()
 	{
-		print("player can wake");
 		canWakePlayer = true;
 	}
 }

@@ -1,16 +1,27 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	// SYSTEM //
+
+	PlayerController controller;
+
+	void Start ()
+	{
+		controller = GetComponent<PlayerController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void FixedUpdate ()
+	{
+		UpdateMovement();
+	}
+
+	// MOVEMENT //
+
+	void UpdateMovement ()
+	{
+		controller.ReceiveMovement(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 	}
 }

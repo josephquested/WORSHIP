@@ -6,6 +6,11 @@ public class PlayerInit : MonoBehaviour {
 
 	public GameObject playerPrefab;
 
+	public void WakePlayer ()
+	{
+		GetComponent<Animator>().SetTrigger("Wake");
+	}
+
 	public void InitPlayer ()
 	{
 		Instantiate(playerPrefab, transform.position, transform.rotation);

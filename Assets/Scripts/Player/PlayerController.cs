@@ -1,16 +1,25 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	// SYSTEM //
+
+	void Start ()
+	{
+		movement = GetComponent<PlayerMovement>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	// MOVEMENT //
+
+	PlayerMovement movement;
+
+	public void ReceiveMovement (float horizontal, float vertical)
+	{
+		if (horizontal != 0 || vertical != 0)
+		{
+			movement.ReceiveMovement(horizontal, vertical);
+		}
 	}
 }
