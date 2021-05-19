@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // -- SYSTEM -- //
+
+    void Awake()
     {
-        
+        playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+        positionOffset = transform.position;
+        rotationOffset = transform.eulerAngles;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        UpdatePosition();
+        UpdateRotation();
+    }
+
+    // -- CAMERA CONTROL -- // 
+
+    Transform playerTrans;
+
+    public Vector3 positionOffset;
+    public Vector3 rotationOffset;
+
+    void UpdatePosition()
+    {
+        transform.position = playerTrans.position + positionOffset;
+    }
+
+    void UpdateRotation ()
+    {
+
     }
 }
